@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+@import 'remixicon/fonts/remixicon.css';
+
+/* Base Styles */
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+/* Tooltip Styles */
+.tooltip {
+  position: relative;
+  display: inline-block;
+  cursor: help;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 200px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -100px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Animation Styles */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.prediction-card {
+  animation: fadeIn 0.5s ease-out forwards;
+  opacity: 0;
+}
+
+.run-predictions-btn {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.run-predictions-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(204, 255, 0, 0.1);
+}
+
+/* Favorite Button Styles */
+.favorite-btn {
+  cursor: pointer;
+  transition: color 0.2s ease-in-out;
+  text-shadow: 0 0 2px #000;
+}
+
+.favorite-btn:hover {
+  color: #FFD700; /* Gold when hover */
+}
+
+.favorite-btn.active {
+  color: #FFD700;
+}
